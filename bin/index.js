@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs-extra');
+const fs = require('fs');
 const path = require('path');
-const { exec, spawn } = require('child_process');
+const { exec } = require('child_process');
 const [, , projectRoot] = process.argv;
 const packageJSON = require('../package.json');
 const copyArray = ['src', 'webpack.config.js', 'README.md', '.babelrc'];
@@ -52,7 +52,7 @@ exec(`mkdir ${projectRoot} && cd ${projectRoot} && npm init -y`, error => {
     const { dependencies, devDependencies } = packageJSON;
 
     const dependenciesString = Object.keys(dependencies).join(' ');
-    const devDependenciesString = Object.keys(devDependencies).filter(_ => _ !== 'fs-extra').join(' ');
+    const devDependenciesString = Object.keys(devDependencies).join(' ');
 
     console.log('Installing packages...');
 
