@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "bin": {
-    "create-my-react-app": "./bin/index.js"
+    "mini-create-react-app": "./bin/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
